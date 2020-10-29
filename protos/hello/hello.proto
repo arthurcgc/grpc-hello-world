@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "github.com/arthurcgc/grpc-learning/protos/hello";
+
+service Hello {
+    rpc SayHello(EmptyParam) returns (HelloResponse);
+}
+
+message HelloResponse {
+    string Hello = 1;
+}
+
+message EmptyParam {}

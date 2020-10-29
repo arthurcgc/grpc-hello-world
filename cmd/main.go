@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/arthurcgc/grpc-learning/protos/currency"
+	"github.com/arthurcgc/grpc-learning/protos/hello"
 	"github.com/arthurcgc/grpc-learning/server"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
@@ -12,8 +12,8 @@ import (
 
 func main() {
 	gs := grpc.NewServer()
-	cs := server.New()
-	currency.RegisterCurrencyServer(gs, cs)
+	helloServer := server.New()
+	hello.RegisterHelloServer(gs, helloServer)
 	reflection.Register(gs)
 
 	listener, err := net.Listen("tcp", ":9999")
