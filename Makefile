@@ -1,4 +1,4 @@
-.PHONY: protos
+.PHONY: protos server
 
 server:
 	go build cmd/main.go
